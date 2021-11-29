@@ -61,12 +61,29 @@ def assemble_string(class_string, simple_string):
 
 # Se hace lo anterior con todo el texto, cada línea se va limpiando, se obtiene la clase y se acomoda
 def rewrite_body(file_to_read, file_to_write):
+  suma1 = 0
+  suma0 = 0
+  tam1 = 0
+  tam0 = 0
   for line in file_to_read:
     clean_line = clean_string(line)
+    tamanioSentence = clean_line.split()
+    if tamanioSentence[len(tamanioSentence)-1] == "1":
+      suma1 += 1
+      tam1 += len(tamanioSentence)-1
+    else: 
+      suma0 += 1
+      tam0 += len(tamanioSentence)-1
+    # print (clean_line)
     class_string = get_class(clean_line)
     simple_string = remove_class(clean_line)
     string_to_write = assemble_string(class_string=class_string, simple_string=simple_string)
     file_to_write.write(string_to_write)
+    
+  print("Suma1: ", tam1)
+  print("Suma0: ", tam0)
+  print("Avg1: ", tam1/suma1)
+  print("Avg0: ", tam0/suma0)
 
 # Se llaman a los métodos anteriores y se crea el nuevo archivo
 def change_text_format(txt_name, arff_name):

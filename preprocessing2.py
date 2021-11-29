@@ -40,6 +40,11 @@ def add_header(file_to_write, relation_name):
 
 # Se limpian las palabras dentro del archivo, se cambian a minúsculas y se le agregan comillas simples a cada línea porque así lo requiere el formato en Weka
 def clean_string(og_string):
+  for r in og_string:
+    if not r in og_string:
+        appendFile = open('merged_data.txt','a')
+        appendFile.write(" "+r)
+        appendFile.close()
   return og_string.lower().replace("'", "").translate(str.maketrans('','', string.punctuation))
 
 # Métodos para recorrer las clases (0, 1) y que estén junto a los strings
@@ -80,4 +85,5 @@ def change_text_format(txt_name, arff_name):
   file_to_write.close()
 
 if __name__ == '__main__':
-  change_text_format(txt_name="./merged_data.txt", arff_name="./reviews1.arff")
+
+  change_text_format(txt_name="./merged_data.txt", arff_name="./reviews2.arff")
