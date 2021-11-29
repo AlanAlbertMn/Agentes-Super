@@ -1,6 +1,8 @@
 # Código para convertir el documento generado de las reviews de Amazon, Yelp e Imdb a un formato que se pueda usar dentro de Weka
 # El código también hace un preprocesamiento simple del texto, se convierten todos los caracteres a minúsculas
 
+import string
+
 # Se definen los headers requeridos dentro de los archivos usados dentro de Weka
 RELATION_BASE_STR = "@relation '{relation_name}'\n"
 ATTRIBUTE_BASE_STR = "@attribute Text string\n"
@@ -38,7 +40,7 @@ def add_header(file_to_write, relation_name):
 
 # Se limpian las palabras dentro del archivo, se cambian a minúsculas y se le agregan comillas simples a cada línea porque así lo requiere el formato en Weka
 def clean_string(og_string):
-  return og_string.lower().replace("'", "")
+  return og_string.lower().replace("'", "").translate(str.maketrans('','', string.punctuation))
 
 # Métodos para recorrer las clases (0, 1) y que estén junto a los strings
 def get_class(og_string):
@@ -78,4 +80,4 @@ def change_text_format(txt_name, arff_name):
   file_to_write.close()
 
 if __name__ == '__main__':
-  change_text_format(txt_name="./merged_data.txt", arff_name="./reviews.arff")
+  change_text_format(txt_name="./merged_data.txt", arff_name="./reviews1.arff")
