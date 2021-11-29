@@ -86,4 +86,4 @@ def change_text_format(txt_name, arff_name):
 
 if __name__ == '__main__':
 
-  change_text_format(txt_name="./merged_data.txt", arff_name="./reviews2.arff")
+  change_text_format(txt_name="./filteredText1.txt", arff_name="./reviews2.arff")

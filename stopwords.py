@@ -1,18 +1,17 @@
-import nltk
+import io
 from nltk.corpus import stopwords
-import os
+from nltk.tokenize import word_tokenize
 
 stop_words = set(stopwords.words('english'))
+file1 = open("merged_data.txt")
+txt = file1.read()
+sentences = txt.split('\n')
 
-loop_dir = "./merged_data.txt"
-save_dir = "./data_no_stopwords.txt"
-
-for txt in os.listdir(loop_dir):
-    print(txt)
-    file = open(loop_dir + txt)
-    save_file = open(save_dir + txt, 'w')
-    text = file.read()
-
-    cleaned = [word for word in text.split() if word not in stop_words]
-
-    save_file.writelines(["%s\n" % item for item in cleaned])
+for sentence in sentences:
+    words = sentence.split()
+    appendFile = open('filteredText1.txt','a')
+    for word in words:
+        if word not in stop_words:
+            appendFile.write(" "+word)
+    appendFile.write("\n")
+    appendFile.close()
