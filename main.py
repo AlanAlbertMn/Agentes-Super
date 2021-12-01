@@ -2,19 +2,19 @@ from clasificador1 import clasificar1
 from clasificador2 import clasificar2
 from clasificador3 import clasificar3
 
-filename = 'outFinal.txt'
+filename = 'outFinal3.csv'
 open(filename, 'w').close()
+open(filename, 'a').write("Case, CSV, F-Score\n")
 
 # Pruebas para clasificador 1 --> KNeighbors Classifier
 # Se modifica el número de vecinos k (3, 5, 7)
-# Se modifica la métrica (euclidean, manhattan, mikowski)
+# Se modifica la métrica (euclidean, manhattan, minkowski)
 # Se modifica el número de trabajos paralelos a realizar para la búsqueda (1, -1), -1 significa que que va a usar todos los núcleos del procesador
 # Se cambia el archivo a usar
 def imprimir1(rList, n, name, distance, cores):
     with open(filename, "a") as file:
-        file.write("C1 --> n={}, csv={}, distance metric={}, parallel jobs={}\n" .format(n, name, distance, cores))
-        for i in rList:
-            file.write("{} " .format(str(i)))
+        file.write("C1 --> n={} distance metric={} parallel jobs={}, CSV={}," .format(n, distance, cores, name))
+        file.write("{}" .format(str(rList)))
         file.write("\n")
 
 # Pruebas para clasificador 1 --> Gaussian Naive Bayes
@@ -22,9 +22,8 @@ def imprimir1(rList, n, name, distance, cores):
 # Se cambia el archivo a usar
 def imprimir2(rList, name, curve):
     with open(filename, "a") as file:
-        file.write("C2 --> csv={}, curve smoothing={}\n" .format(name, curve))
-        for i in rList:
-            file.write("{} " .format(str(i)))
+        file.write("C2 --> curve smoothing={}, CSV={}," .format(curve, name))
+        file.write("{} " .format(str(rList)))
         file.write("\n")
 
 # Pruebas para clasificador 1 --> Decision Tree Classifier
@@ -33,9 +32,8 @@ def imprimir2(rList, name, curve):
 # Se cambia el archivo a usar
 def imprimir3(rList, name, split, depth):
     with open(filename, "a") as file:
-        file.write("C3 --> csv={}, split type={}, tree depth={}\n" .format(name, split, depth))
-        for i in rList:
-            file.write("{} " .format(str(i)))
+        file.write("C3 --> split type={} tree depth={}, CSV={}," .format(split, depth, name))
+        file.write("{} " .format(str(rList)))
         file.write("\n")
 
 ######################################################################################################

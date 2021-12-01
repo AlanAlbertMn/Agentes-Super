@@ -1,0 +1,67 @@
+Case, CSV, F-Score
+C1 --> n=3 distance metric=euclidean parallel jobs=1, CSV=reviews1_vectors,0.7182010443791669
+C1 --> n=5 distance metric=euclidean parallel jobs=1, CSV=reviews1_vectors,0.676546174887547
+C1 --> n=7 distance metric=euclidean parallel jobs=1, CSV=reviews1_vectors,0.639158724340176
+C1 --> n=3 distance metric=euclidean parallel jobs=1, CSV=reviews2_vectors,0.6977381592766209
+C1 --> n=5 distance metric=euclidean parallel jobs=1, CSV=reviews2_vectors,0.6506437212913243
+C1 --> n=7 distance metric=euclidean parallel jobs=1, CSV=reviews2_vectors,0.645336640433941
+C1 --> n=3 distance metric=euclidean parallel jobs=-1, CSV=reviews1_vectors,0.7113997113997115
+C1 --> n=5 distance metric=euclidean parallel jobs=-1, CSV=reviews1_vectors,0.6525866322866245
+C1 --> n=7 distance metric=euclidean parallel jobs=-1, CSV=reviews1_vectors,0.6286955303348747
+C1 --> n=3 distance metric=euclidean parallel jobs=-1, CSV=reviews2_vectors,0.6511539725473344
+C1 --> n=5 distance metric=euclidean parallel jobs=-1, CSV=reviews2_vectors,0.6529050586510263
+C1 --> n=7 distance metric=euclidean parallel jobs=-1, CSV=reviews2_vectors,0.6600027199782401
+C1 --> n=3 distance metric=manhattan parallel jobs=1, CSV=reviews1_vectors,0.721573084286663
+C1 --> n=5 distance metric=manhattan parallel jobs=1, CSV=reviews1_vectors,0.7238331952499308
+C1 --> n=7 distance metric=manhattan parallel jobs=1, CSV=reviews1_vectors,0.681950251576784
+C1 --> n=3 distance metric=manhattan parallel jobs=1, CSV=reviews2_vectors,0.6266968325791855
+C1 --> n=5 distance metric=manhattan parallel jobs=1, CSV=reviews2_vectors,0.6537236252827923
+C1 --> n=7 distance metric=manhattan parallel jobs=1, CSV=reviews2_vectors,0.6581331588270469
+C1 --> n=3 distance metric=manhattan parallel jobs=-1, CSV=reviews1_vectors,0.6747474236793987
+C1 --> n=5 distance metric=manhattan parallel jobs=-1, CSV=reviews1_vectors,0.6758138245106475
+C1 --> n=7 distance metric=manhattan parallel jobs=-1, CSV=reviews1_vectors,0.6726342710997443
+C1 --> n=3 distance metric=manhattan parallel jobs=-1, CSV=reviews2_vectors,0.6729469513176736
+C1 --> n=5 distance metric=manhattan parallel jobs=-1, CSV=reviews2_vectors,0.7290244881573664
+C1 --> n=7 distance metric=manhattan parallel jobs=-1, CSV=reviews2_vectors,0.6735245601173021
+C1 --> n=3 distance metric=minkowski parallel jobs=1, CSV=reviews1_vectors,0.6910124938426403
+C1 --> n=5 distance metric=minkowski parallel jobs=1, CSV=reviews1_vectors,0.6884496539748206
+C1 --> n=7 distance metric=minkowski parallel jobs=1, CSV=reviews1_vectors,0.6509988249118683
+C1 --> n=3 distance metric=minkowski parallel jobs=1, CSV=reviews2_vectors,0.6793499702013716
+C1 --> n=5 distance metric=minkowski parallel jobs=1, CSV=reviews2_vectors,0.6334861881719067
+C1 --> n=7 distance metric=minkowski parallel jobs=1, CSV=reviews2_vectors,0.6861054491293571
+C1 --> n=3 distance metric=minkowski parallel jobs=-1, CSV=reviews1_vectors,0.7242647058823529
+C1 --> n=5 distance metric=minkowski parallel jobs=-1, CSV=reviews1_vectors,0.6488137321943925
+C1 --> n=7 distance metric=minkowski parallel jobs=-1, CSV=reviews1_vectors,0.6743762585298295
+C1 --> n=3 distance metric=minkowski parallel jobs=-1, CSV=reviews2_vectors,0.6847298475626209
+C1 --> n=5 distance metric=minkowski parallel jobs=-1, CSV=reviews2_vectors,0.6726867542597149
+C1 --> n=7 distance metric=minkowski parallel jobs=-1, CSV=reviews2_vectors,0.6383822363203806
+C2 --> curve smoothing=0.06, CSV=reviews1_vectors,0.8082688903770434 
+C2 --> curve smoothing=0.06, CSV=reviews2_vectors,0.8014675827705005 
+C2 --> curve smoothing=1e-09, CSV=reviews1_vectors,0.7580907521153156 
+C2 --> curve smoothing=1e-09, CSV=reviews2_vectors,0.703624636627907 
+C2 --> curve smoothing=2e-09, CSV=reviews1_vectors,0.7445979097355243 
+C2 --> curve smoothing=2e-09, CSV=reviews2_vectors,0.7544263125802222 
+C2 --> curve smoothing=0.1, CSV=reviews1_vectors,0.7866571847637673 
+C2 --> curve smoothing=0.1, CSV=reviews2_vectors,0.7874352472529771 
+C2 --> curve smoothing=0.08, CSV=reviews1_vectors,0.7795198432141108 
+C2 --> curve smoothing=0.08, CSV=reviews2_vectors,0.8165667974786273 
+C3 --> split type=best tree depth=None, CSV=reviews1_vectors,0.752794975724912 
+C3 --> split type=best tree depth=None, CSV=reviews2_vectors,0.7479629789329321 
+C3 --> split type=best tree depth=1, CSV=reviews1_vectors,0.45325900514579764 
+C3 --> split type=best tree depth=1, CSV=reviews2_vectors,0.4624143034037027 
+C3 --> split type=best tree depth=2, CSV=reviews1_vectors,0.44195349612467705 
+C3 --> split type=best tree depth=2, CSV=reviews2_vectors,0.5312363236738623 
+C3 --> split type=best tree depth=3, CSV=reviews1_vectors,0.518619646789642 
+C3 --> split type=best tree depth=3, CSV=reviews2_vectors,0.5238626404270577 
+C3 --> split type=best tree depth=4, CSV=reviews1_vectors,0.5213440506498088 
+C3 --> split type=best tree depth=4, CSV=reviews2_vectors,0.5187129886772917 
+C3 --> split type=random tree depth=None, CSV=reviews1_vectors,0.7583326620351725 
+C3 --> split type=random tree depth=None, CSV=reviews2_vectors,0.7530589543937709 
+C3 --> split type=random tree depth=1, CSV=reviews1_vectors,0.45023148148148157 
+C3 --> split type=random tree depth=1, CSV=reviews2_vectors,0.45838744425316863 
+C3 --> split type=random tree depth=2, CSV=reviews1_vectors,0.45385800308080093 
+C3 --> split type=random tree depth=2, CSV=reviews2_vectors,0.5250298029718491 
+C3 --> split type=random tree depth=3, CSV=reviews1_vectors,0.5263157894736843 
+C3 --> split type=random tree depth=3, CSV=reviews2_vectors,0.5365963869900877 
+C3 --> split type=random tree depth=4, CSV=reviews1_vectors,0.5476526841990872 
+C3 --> split type=random tree depth=4, CSV=reviews2_vectors,0.5067337121424726 
