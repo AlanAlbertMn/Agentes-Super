@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_fscore_support
 
-def clasificar3(archive):
+def clasificar3(archive, split, depth):
     print("\nDecision Tree")
     Archivo = open(archive, 'r')
     Clases = []
@@ -16,7 +16,7 @@ def clasificar3(archive):
 
     Datos_train, Datos_test, Clase_Train, Clase_Test = train_test_split(Valores, Clases, test_size = 0.2)
 
-    algoritmo = DecisionTreeClassifier()
+    algoritmo = DecisionTreeClassifier(splitter = split, max_depth = depth)
 
     algoritmo.fit(Datos_train, Clase_Train)
 
@@ -27,7 +27,7 @@ def clasificar3(archive):
     print('\nMatriz de confusion:')
     print(Matriz)
 
-    resultList = precision_recall_fscore_support(Clase_Test, ClasesRecuperadas, average = 'micro')
+    resultList = precision_recall_fscore_support(Clase_Test, ClasesRecuperadas, average = 'macro')
     precision, recall, fscore, _ = resultList
     print('\nPrecision:', precision, '\nRecuerdo:', recall, '\nF-score:', fscore, '\n')
     print(resultList)

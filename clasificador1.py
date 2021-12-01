@@ -2,7 +2,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_fscore_support
 
-def clasificar1(n_neighbors, archive):
+def clasificar1(n_neighbors, archive, distance, jobs):
   print("\nKNN n =", n_neighbors)
   # Agregar los atributos en un vector
   Archivo = open(archive, 'r')
@@ -18,7 +18,7 @@ def clasificar1(n_neighbors, archive):
   Datos_train, Datos_test, Clase_Train, Clase_Test = train_test_split(Valores, Clases, test_size=0.2)
 
   # Definir modelo (elegir clasificador)
-  algoritmo = KNeighborsClassifier(n_neighbors, metric='euclidean')
+  algoritmo = KNeighborsClassifier(n_neighbors, metric=distance, n_jobs=jobs)
 
   # Entrenamiento
   algoritmo.fit(Datos_train, Clase_Train)
@@ -32,7 +32,7 @@ def clasificar1(n_neighbors, archive):
   print('\nMatriz de confusion:')
   print(Matriz)
 
-  resultList = precision_recall_fscore_support(Clase_Test, ClasesRecuperadas, average = 'micro')
+  resultList = precision_recall_fscore_support(Clase_Test, ClasesRecuperadas, average = 'macro')
   precision, recall, fscore, _ = resultList
   print('\nPrecision:', precision, '\nRecuerdo:', recall, '\nF-score:', fscore, '\n')
   print(resultList)

@@ -3,7 +3,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_fscore_support
 
 
-def clasificar2(archive):
+def clasificar2(archive, curve):
     print("\nNaive Bayes")
     Archivo = open(archive, 'r')
     Clases = []
@@ -17,7 +17,7 @@ def clasificar2(archive):
     Datos_train, Datos_test, Clase_Train, Clase_Test = train_test_split(
         Valores, Clases, test_size=0.2)
 
-    algoritmo = GaussianNB()
+    algoritmo = GaussianNB(var_smoothing = curve)
 
     algoritmo.fit(Datos_train, Clase_Train)
 
@@ -28,7 +28,7 @@ def clasificar2(archive):
     print('\nMatriz de confusion:')
     print(Matriz)
 
-    resultList = precision_recall_fscore_support(Clase_Test, ClasesRecuperadas, average = 'micro')
+    resultList = precision_recall_fscore_support(Clase_Test, ClasesRecuperadas, average = 'macro')
     precision, recall, fscore, _ = resultList
     print('\nPrecision:', precision, '\nRecuerdo:', recall, '\nF-score:', fscore, '\n')
     print(resultList)
