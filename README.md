@@ -22,7 +22,7 @@ Este programa se encarga de utilizar los datos del archivo "merged-data.txt", ut
 
 Este programa se encarga de recoger los datos del archivo "filteredText.txt" y continuar el segundo preprocesamiento. El primer paso fue remover las stopwords, ahora también se cambia el texto a minúsculas y se quitan los signos de puntuación. Finalmente se cambia el formato del archivo hacia uno que puede leer Weka, el archivo obtenido es "reviews2.arff"
 
-## reviews2_vectors
+## reviews2_vectors.csv
 
 Esta es la última parte del segundo preprocesamiento. Se mete a Weka el archivo "reviews2.arff" y se le aplica TF-IDF para convertir las palabras a vectores y pueda ser ejecutado por los diferentes clasificadores.
 
